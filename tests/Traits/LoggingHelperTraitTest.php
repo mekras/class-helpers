@@ -5,7 +5,6 @@
 namespace Mekras\ClassHelpers\Tests\Traits;
 
 use PHPUnit_Framework_TestCase as TestCase;
-use Psr\Log\LoggerInterface;
 use Psr\Log\LogLevel;
 use Psr\Log\NullLogger;
 
@@ -62,7 +61,7 @@ class LoggingHelperTraitTest extends TestCase
     public function testGetNullLogger()
     {
         $helper = new LoggingHelperTraitTestFoo();
-        static::assertInstanceOf(NullLogger::class, $helper->get());
+        static::assertInstanceOf('Psr\Log\NullLogger', $helper->get());
     }
 
     /**
@@ -71,7 +70,7 @@ class LoggingHelperTraitTest extends TestCase
     public function testLogException()
     {
         $helper = new LoggingHelperTraitTestFoo();
-        $logger = $this->getMockForAbstractClass(LoggerInterface::class);
+        $logger = $this->getMockForAbstractClass('Psr\Log\LoggerInterface');
         $logger->expects(static::once())->method('log')->with(LogLevel::CRITICAL, 'Exception: Foo');
         $helper->set($logger);
         $e = new \Exception('Foo');
