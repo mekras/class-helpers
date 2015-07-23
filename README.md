@@ -1,6 +1,9 @@
 # Some common helpers for PHP classes 
 
+[![Latest Stable Version](https://poser.pugx.org/mekras/class-helpers/v/stable.png)](https://packagist.org/packages/mekras/class-helpers)
+[![License](https://poser.pugx.org/mekras/class-helpers/license.png)](https://packagist.org/packages/mekras/class-helpers)
 [![Build Status](https://travis-ci.org/mekras/class-helpers.svg?branch=master)](https://travis-ci.org/mekras/class-helpers)
+[![Coverage Status](https://coveralls.io/repos/mekras/class-helpers/badge.svg?branch=master&service=github)](https://coveralls.io/github/mekras/class-helpers?branch=master)
 
 ## GettersCacheTrait
 
