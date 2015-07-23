@@ -1,5 +1,6 @@
 # Some common helpers for PHP classes 
 
+[![Build Status](https://travis-ci.org/mekras/class-helpers.svg?branch=master)](https://travis-ci.org/mekras/class-helpers)
 
 ## GettersCacheTrait
 
