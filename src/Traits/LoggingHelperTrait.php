@@ -28,6 +28,19 @@ trait LoggingHelperTrait
     private $logger = null;
 
     /**
+     * Set logger
+     *
+     * @param LoggerInterface $logger
+     *
+     * @since x.xx Method is made public
+     * @since 1.00
+     */
+    public function setLogger(LoggerInterface $logger)
+    {
+        $this->logger = $logger;
+    }
+
+    /**
      * Return logger
      *
      * @return LoggerInterface
@@ -41,18 +54,6 @@ trait LoggingHelperTrait
         }
 
         return $this->logger;
-    }
-
-    /**
-     * Set logger
-     *
-     * @param LoggerInterface $logger
-     *
-     * @since 1.00
-     */
-    protected function setLogger(LoggerInterface $logger)
-    {
-        $this->logger = $logger;
     }
 
     /**
