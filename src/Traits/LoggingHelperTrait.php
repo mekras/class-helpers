@@ -32,7 +32,7 @@ trait LoggingHelperTrait
      *
      * @param LoggerInterface $logger
      *
-     * @since x.xx Method is made public
+     * @since 1.01 Method is made public
      * @since 1.00
      */
     public function setLogger(LoggerInterface $logger)
