@@ -63,7 +63,7 @@ trait LoggingHelperTrait
      * @param string    $action failed action short description
      * @param mixed     $level  log level (default to ERROR)
      *
-     * @since x.xx default log level is ERROR
+     * @since 1.01 default log level is ERROR
      * @since 1.00
      */
     protected function logException(Exception $e, $action = null, $level = LogLevel::ERROR)
