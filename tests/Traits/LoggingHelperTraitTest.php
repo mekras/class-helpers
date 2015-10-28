@@ -71,7 +71,7 @@ class LoggingHelperTraitTest extends TestCase
     {
         $helper = new LoggingHelperTraitTestFoo();
         $logger = $this->getMockForAbstractClass('Psr\Log\LoggerInterface');
-        $logger->expects(static::once())->method('log')->with(LogLevel::CRITICAL, 'Exception: Foo');
+        $logger->expects(static::once())->method('log')->with(LogLevel::ERROR, 'Exception: Foo');
         $helper->set($logger);
         $e = new \Exception('Foo');
         $helper->log($e);

@@ -61,11 +61,12 @@ trait LoggingHelperTrait
      *
      * @param Exception $e      exception
      * @param string    $action failed action short description
-     * @param mixed     $level  log level
+     * @param mixed     $level  log level (default to ERROR)
      *
+     * @since x.xx default log level is ERROR
      * @since 1.00
      */
-    protected function logException(Exception $e, $action = null, $level = LogLevel::CRITICAL)
+    protected function logException(Exception $e, $action = null, $level = LogLevel::ERROR)
     {
         $message = $action
             ? sprintf('%s failed: %s', $action, $e->getMessage())
