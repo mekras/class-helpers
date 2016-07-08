@@ -79,7 +79,7 @@ trait GettersCacheTrait
      *
      * @param string $name cache entry key
      *
-     * @since x.x
+     * @since 1.3
      */
     protected function dropCachedProperty($name)
     {

@@ -1,6 +1,6 @@
 # CHANGELOG
 
-## Unreleased
+## 1.3 - 08.07.16
 
 ### Added
 
