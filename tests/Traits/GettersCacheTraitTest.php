@@ -47,6 +47,11 @@ class GettersCacheTraitTest extends TestCase
                     }
                     $this->foo = $value;
                 }
+
+                public function unsetFoo()
+                {
+                    $this->dropCachedProperty("foo");
+                }
             }}');
     }
 
@@ -73,5 +78,19 @@ class GettersCacheTraitTest extends TestCase
         $object->setFoo($foo);
         static::assertEquals(456, $object->getFoo()->id);
         static::assertEquals(456, $object->foo);
+    }
+
+    /**
+     * Check dropping
+     */
+    public function testDropCachedValue()
+    {
+        $object = new GettersCacheTraitTestFoo();
+        $foo1 = $object->getFoo();
+        $foo2 = $object->getFoo();
+        static::assertSame($foo1, $foo2);
+        $object->unsetFoo();
+        $foo2 = $object->getFoo();
+        static::assertNotSame($foo1, $foo2);
     }
 }
