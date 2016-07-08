@@ -4,8 +4,6 @@
  */
 namespace Mekras\ClassHelpers\Traits;
 
-use Closure;
-
 /**
  * Cache for getters
  *
@@ -30,7 +28,7 @@ use Closure;
  * Method `getCachedProperty` checks if key `foo` exists in the object's internal cache, and if it
  * exists, returns cached value. Otherwise factory function will be called to get value.
  *
- * @since 1.00
+ * @since 1.0
  */
 trait GettersCacheTrait
 {
@@ -44,19 +42,20 @@ trait GettersCacheTrait
     /**
      * Return cached value for $name or call $factory to get new value
      *
-     * @param string  $name    cache entry key
-     * @param Closure $factory value factory function
+     * @param string   $name    cache entry key
+     * @param \Closure $factory value factory function
      *
      * @return mixed
      *
-     * @since 1.00
+     * @since 1.0
      */
-    protected function getCachedProperty($name, Closure $factory)
+    protected function getCachedProperty($name, \Closure $factory)
     {
         $name = (string) $name;
         if (!array_key_exists($name, $this->gettersCache)) {
             $this->gettersCache[$name] = call_user_func($factory);
         }
+
         return $this->gettersCache[$name];
     }
 
@@ -68,10 +67,22 @@ trait GettersCacheTrait
      * @param string $name  cache entry key
      * @param mixed  $value new value
      *
-     * @since 1.00
+     * @since 1.0
      */
     protected function setCachedProperty($name, $value)
     {
         $this->gettersCache[$name] = $value;
+    }
+
+    /**
+     * Drop cached value
+     *
+     * @param string $name cache entry key
+     *
+     * @since x.x
+     */
+    protected function dropCachedProperty($name)
+    {
+        unset($this->gettersCache[$name]);
     }
 }
