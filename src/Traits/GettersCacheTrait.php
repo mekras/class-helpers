@@ -85,4 +85,14 @@ trait GettersCacheTrait
     {
         unset($this->gettersCache[$name]);
     }
+
+    /**
+     * Drop ALL cached values.
+     *
+     * @since 1.4
+     */
+    protected function dropCachedProperties()
+    {
+        $this->gettersCache = [];
+    }
 }
