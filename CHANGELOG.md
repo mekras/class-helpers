@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## 1.5 - 2016-08-22
+
+### Added
+
+- `PropertyContainerTrait`
+
+
 ## 1.4 - 2016-08-11
 
 ### Added
