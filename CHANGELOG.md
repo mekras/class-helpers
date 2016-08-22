@@ -1,13 +1,13 @@
 # CHANGELOG
 
-## 1.4 - 11.08.16
+## 1.4 - 2016-08-11
 
 ### Added
 
 - `GettersCacheTrait::dropCachedProperties()`
 
 
-## 1.3 - 08.07.16
+## 1.3 - 2016-07-08
 
 ### Added
 
