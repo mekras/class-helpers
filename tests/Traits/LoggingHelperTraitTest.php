@@ -1,6 +1,6 @@
 <?php
 /**
- * Class helpers
+ * Class helpers.
  */
 namespace Mekras\ClassHelpers\Tests\Traits;
 

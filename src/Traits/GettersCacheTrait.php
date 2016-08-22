@@ -1,13 +1,13 @@
 <?php
 /**
- * Class helpers
+ * Class helpers.
  */
 namespace Mekras\ClassHelpers\Traits;
 
 /**
- * Cache for getters
+ * Cache for getters.
  *
- * Allow to cache values returned by getters during the lifetime of the object.
+ * Allow to cache values returned by getters during the object lifetime.
  *
  * Example:
  *
@@ -33,17 +33,17 @@ namespace Mekras\ClassHelpers\Traits;
 trait GettersCacheTrait
 {
     /**
-     * Internal getters cache
+     * Internal getters cache.
      *
      * @var array
      */
     private $gettersCache = [];
 
     /**
-     * Return cached value for $name or call $factory to get new value
+     * Return cached value for $name or call $factory to get new value.
      *
-     * @param string   $name    cache entry key
-     * @param \Closure $factory value factory function
+     * @param string   $name    Cache entry key.
+     * @param \Closure $factory Value factory function.
      *
      * @return mixed
      *
@@ -60,12 +60,12 @@ trait GettersCacheTrait
     }
 
     /**
-     * Change cached value
+     * Change cached value.
      *
      * Useful for setters.
      *
-     * @param string $name  cache entry key
-     * @param mixed  $value new value
+     * @param string $name  Cache entry key.
+     * @param mixed  $value New value.
      *
      * @since 1.0
      */
@@ -75,9 +75,9 @@ trait GettersCacheTrait
     }
 
     /**
-     * Drop cached value
+     * Drop cached value.
      *
-     * @param string $name cache entry key
+     * @param string $name Cache entry key.
      *
      * @since 1.3
      */

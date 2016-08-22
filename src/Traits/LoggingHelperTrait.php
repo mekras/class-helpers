@@ -1,39 +1,38 @@
 <?php
 /**
- * Class helpers
+ * Class helpers.
  */
 namespace Mekras\ClassHelpers\Traits;
 
-use Exception;
 use Psr\Log\LoggerInterface;
 use Psr\Log\LogLevel;
 use Psr\Log\NullLogger;
 
 /**
- * Logging helper
+ * Logging helper.
  *
  * - Logger setter/getter.
- * - getLogger return NullLogger when no logger set — you can omit logger checks.
+ * - {@see getLogger()} return NullLogger when no logger was set — you can omit logger checks.
  * - Shortcut method to log exceptions.
  *
- * @since 1.00
+ * @since 1.0
  */
 trait LoggingHelperTrait
 {
     /**
-     * Logger
+     * Logger.
      *
      * @var LoggerInterface|null
      */
     private $logger = null;
 
     /**
-     * Set logger
+     * Set logger.
      *
      * @param LoggerInterface $logger
      *
-     * @since 1.01 Method is made public
-     * @since 1.00
+     * @since 1.1 Method made public.
+     * @since 1.0
      */
     public function setLogger(LoggerInterface $logger)
     {
@@ -41,11 +40,11 @@ trait LoggingHelperTrait
     }
 
     /**
-     * Return logger
+     * Return logger.
      *
      * @return LoggerInterface
      *
-     * @since 1.00
+     * @since 1.0
      */
     protected function getLogger()
     {
@@ -57,16 +56,16 @@ trait LoggingHelperTrait
     }
 
     /**
-     * Log exception
+     * Log exception.
      *
-     * @param Exception $e      exception
-     * @param string    $action failed action short description
-     * @param mixed     $level  log level (default to ERROR)
+     * @param \Exception  $e      Exception.
+     * @param string|null $action Failed action short description.
+     * @param mixed       $level  Log level (default to LogLevel::ERROR).
      *
-     * @since 1.01 default log level is ERROR
-     * @since 1.00
+     * @since 1.1 Default log level is LogLevel::ERROR
+     * @since 1.0
      */
-    protected function logException(Exception $e, $action = null, $level = LogLevel::ERROR)
+    protected function logException(\Exception $e, $action = null, $level = LogLevel::ERROR)
     {
         $message = $action
             ? sprintf('%s failed: %s', $action, $e->getMessage())
